@@ -13,7 +13,7 @@ export interface Theme {
 const theme: Theme = {
   colours: {
     primary: "#1300FF",
-    secondary: "#f5d742"
+    secondary: "#FFFF00"
   },
   font: {
     fontFace: "Favorit"

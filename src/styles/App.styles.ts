@@ -12,7 +12,7 @@ export const Body = styled.div`
   font-family: ${theme.font.fontFace};
 
   text-align: left;
-  line-height: 1.8;
+  line-height: 1.5;
 
   @media only screen and (max-width: 600px) {
     font-size: 14px;
@@ -32,7 +32,7 @@ export const Body = styled.div`
 `;
 
 export const Section = styled.div<SectionProps>`
-  margin: 100px 0 100px 100px;
+  margin: 70px 0 70px 100px;
 
   @media only screen and (max-width: 600px) {
     margin: ${props => (props.top ? "100px 0 0 40px;" : "50px 0 0 40px;")};
