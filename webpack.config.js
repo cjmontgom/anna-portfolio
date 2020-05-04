@@ -38,9 +38,16 @@ module.exports = {
                     loader: 'babel-loader'
                 },
             },
-
-            // css-loader to bundle all the css files into one file and style-loader to add all the styles inside the style tag of the document
-        // *** REMOVE THIS?? ***
+            {
+                test: /\.(png|jp(e*)g|svg)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8000, // Convert images < 8kb to base64 strings
+                        name: 'images/[hash]-[name].[ext]'
+                    }
+                }]
+            },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
@@ -53,7 +60,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            favicon: "./src/favicon.png"
         })
     ]
 };
